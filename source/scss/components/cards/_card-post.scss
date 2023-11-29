@@ -1,0 +1,29 @@
+@use 'sass:math';
+@use '../../_config.scss' as *;
+
+.card-post{
+    @include imageRatio(600,400);
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 64px;
+    align-items: center;
+
+    &:nth-child(even) &__image-container{
+        order: 2;
+    }
+
+    &:nth-child(even) &__info-container{
+        order: 1;
+    }
+
+    &__title{
+        font-size: 42px;
+        margin-bottom: 32px;
+    }
+
+    &__info{
+        font-size: 18px;
+        line-height: 1.7;
+    }
+}
